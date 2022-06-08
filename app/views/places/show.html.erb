@@ -16,6 +16,7 @@
         <h4><%= post["posted_on"] %></h4>
         <% if post.uploaded_image.attached? %>
           <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+          <%# optionality to upload image as per user preference %>
         <% else %>
         <% end %>
         <p><%= post["description"] %></p>
@@ -29,6 +30,6 @@
 
 
   <p>
-    <a href="/places">Back to all places</a>
+    <a href="/places">Back to places home</a>
   </p>
 </div>

@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-  # authenticate the user
+  # authenticate the user as per user stories (if success, then proceed to places; if failure, then redirect user to login)
     @user = User.find_by({ "email" => params["email"] })
     if @user
       if BCrypt::Password.new(@user["password"]) == params["password"]
